@@ -1,0 +1,26 @@
+#!/usr/bin/python
+import sys
+import twitter
+api = twitter.Api(consumer_key='7ZVgfKiOvBDcDFpytRWSA',  consumer_secret='JmeJVeym78arzmGthrDUshQyhkq6nWA9tWLUKxc', access_token_key='6015212-Ktjzc78s4juwCOlE7XRvTeY2UTmdzWXxwmUDRpNH4', access_token_secret='VR4BGcAB9lNIz7xSFWU0IWBuX6XbmLG8sfBgmqSV4c')
+
+STATE_OK=0
+STATE_WARNING=1
+STATE_CRITICAL=2
+STATE_UNKNOWN=3
+STATE_DEPENDENT=4
+
+dict_remain=api.GetRateLimitStatus()
+remain=int(dict_remain['remaining_hits'])
+
+if remain < 26:
+        print "CRITICAL - Quedan %s twits" % remain
+        sys.exit(STATE_CRITICAL)
+
+
+if remain > 25  and remain < 100 :
+        print "WARNING -  Quedan %s twits" % remain
+        sys.exit(STATE_WARNIN)
+
+if remain > 100:
+        print "OK - Quedan %s twits" % remain
+        sys.exit(STATE_OK)

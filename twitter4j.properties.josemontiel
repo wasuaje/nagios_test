@@ -1,0 +1,7 @@
+#twitter4j.properties
+#Thu Aug 30 16:38:17 VET 2012
+oauth.consumerSecret=JmeJVeym78arzmGthrDUshQyhkq6nWA9tWLUKxc
+oauth.accessToken=33703304-fFcnFo0GvI4hFtq8hT3EUsj2L1P0PqSGnxULHqVE
+oauth.accessTokenSecret=EOZi83iAISrWkM0KrK2GcxjEom27wpg57shlXzNlOc
+http.prettyDebug=true
+oauth.consumerKey=7ZVgfKiOvBDcDFpytRWSA
